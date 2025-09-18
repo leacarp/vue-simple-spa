@@ -13,6 +13,7 @@
           <RouterLink to="/features"> Features </RouterLink>
           <RouterLink to="/pricing"> Pricing </RouterLink>
           <RouterLink to="/contact"> Contact </RouterLink>
+          <RouterLink to="/pokemon/1"> Pokemon </RouterLink>
           <RouterLink to="/auth"> Login </RouterLink>
         </div>
       </nav>
@@ -21,7 +22,12 @@
 
     <!-- Main -->
     <main class="flex-1 flex items-center justify-center">
-      <RouterView />
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+      <!-- <RouterView /> -->
     </main>
     <!-- Fin Main -->
 
